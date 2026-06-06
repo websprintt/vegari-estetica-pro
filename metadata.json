@@ -1,0 +1,6 @@
+{
+  "name": "Vegari Centro de Estética",
+  "description": "Landing page premium interactiva para Vegari, centro de estética avanzada en Ciudad Real con más de 20 años de experiencia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

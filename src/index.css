@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-gold-50: #fbf7f4;
+  --color-gold-100: #f6eee9;
+  --color-gold-200: #ebd8cf;
+  --color-gold-300: #debfae;
+  --color-gold-400: #cc9f89;
+  --color-gold-500: #ba826b;
+  --color-gold-600: #aa6b51;
+  --color-gold-700: #8c553e;
+  --color-gold-800: #714432;
+  --color-gold-900: #5c3729;
+
+  --color-luxury-950: #0f0b0a;
+  --color-luxury-900: #1a1311;
+  --color-luxury-800: #2c201d;
+  --color-luxury-700: #3c2c28;
+  --color-luxury-100: #faf8f6;
+  --color-luxury-200: #f4efeb;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color: var(--color-luxury-900);
+    background-color: var(--color-luxury-100);
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-gold-50);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-300);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-400);
+}
+
+/* Premium Animations & Utilities for Mobile First & Ultra-Modern design */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: shine 4s infinite ease-in-out;
+}
+
+@keyframes ambientGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-ambient-gradient {
+  background: linear-gradient(-45deg, #faf8f6, #fbf7f4, #ebd8cf, #f4efeb);
+  background-size: 300% 300%;
+  animation: ambientGlow 12s ease infinite;
+}
+
+.text-stroke-gold {
+  -webkit-text-stroke: 1px var(--color-gold-400);
+}
+
